@@ -1,6 +1,6 @@
 fastapi
 mypy
-black
+flake8
 httpx
 pytest
 uvicorn
