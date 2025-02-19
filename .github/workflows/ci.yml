@@ -24,10 +24,10 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }} 
       - name: Install dependencies
-        run: pip install black mypy
+        run: pip install flake8 mypy
       - name: Run linter
         run: |
-          black --check .
+          flake8 .
           mypy .
 
   test:
