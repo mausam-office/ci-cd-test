@@ -14,7 +14,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        - os: [ubuntu-latest]
+        - os: [ubuntu-latest, windows-latest]
           python-version: [3.9, 3.10]
     name: lint (OS> ${{ matrix.os }}, Python> ${{ matrix.python-version }})
     steps:
@@ -34,7 +34,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        - os: [ubuntu-latest]
+        - os: [ubuntu-latest, windows-latest]
           python-version: [3.9, 3.10]
     if: github.event_name == 'workflow_dispatch'
     name: test (OS> ${{ matrix.os }}, Python> ${{ matrix.python-version }})
