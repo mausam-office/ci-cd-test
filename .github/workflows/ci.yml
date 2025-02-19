@@ -17,7 +17,7 @@ jobs:
       matrix:
         - os: [ubuntu-latest]
           python-version: [3.9, 3.10]
-    name: lint (OS: ${{ matrix.os }}, Python: ${{ matrix.python-version }})
+    name: lint (OS> ${{ matrix.os }}, Python> ${{ matrix.python-version }})
     steps:
       - uses: actions/checkout@v3
       - name: Set up Python ${{ matrix.python-version }}
@@ -38,7 +38,7 @@ jobs:
         - os: [ubuntu-latest]
           python-version: [3.9, 3.10]
     if: github.event_name == 'workflow_dispatch'
-    name: test (OS: ${{ matrix.os }}, Python: ${{ matrix.python-version }})
+    name: test (OS> ${{ matrix.os }}, Python> ${{ matrix.python-version }})
     steps:
       - uses: actions/checkout@v3
       - name: Set up Python ${{ matrix.python-version }}
