@@ -9,10 +9,9 @@ on:
       - main
   workflow_dispatch:
 
-
 jobs:
   lint:
-    runs_on: ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
     strategy:
       matrix:
         - os: [ubuntu-latest]
@@ -30,9 +29,9 @@ jobs:
         run: |
           black --check .
           mypy .
-  
+
   test:
-    runs_on: ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
     strategy:
       matrix:
         - os: [ubuntu-latest]
@@ -42,7 +41,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Set up Python ${{ matrix.python-version }}
-      - uses: actions/setup-python@v4
+        uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python-version }}
       - name: Install dependencies
