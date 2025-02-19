@@ -1,5 +1,6 @@
 fastapi
 mypy
 black
+httpx
 pytest
 uvicorn
