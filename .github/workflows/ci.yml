@@ -7,7 +7,7 @@ on:
   pull_request:
     branches:
       - main
-  workflow_dispatch:
+  # workflow_dispatch:
 
 jobs:
   lint:
@@ -37,7 +37,7 @@ jobs:
       matrix:
           os: [ubuntu-latest, windows-latest]
           python-version: ["3.9", "3.10"]
-    if: github.event_name == 'workflow_dispatch'
+    # if: github.event_name == 'workflow_dispatch'
     name: test (OS> ${{ matrix.os }}, Python> ${{ matrix.python-version }})
     steps:
       - uses: actions/checkout@v3
